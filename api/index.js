@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
 app.use(cors({
    credentials: true,
-   origin: 'http://localhost:5173',
+   origin: '*',
 }));
 
 mongoose.connect(process.env.MONGO_URL);
@@ -177,6 +177,7 @@ app.post('/bookings',async(req,res) => {
     const{
         place, checkIn, checkOut, numberOfGuests, name, phone, price
     } = req.body;
+    // console.log(req.body)
     Booking.create({ 
         place, checkIn, checkOut, numberOfGuests, name, phone, price,
         user:userData.id,
@@ -193,6 +194,6 @@ app.get('/bookings',async(req,res) => {
     res.json( await Booking.find({user:userData.id}).populate('place'))
 });
 
-app.listen(5000,()=>{
+app.listen(4000,()=>{
     console.log('Server is Running')
 });
