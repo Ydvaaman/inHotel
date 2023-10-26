@@ -20,10 +20,7 @@ const jwtSecret = 'asdsaewefwfds';
 app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname+'/uploads'));
-app.use(cors({
-   credentials: true,
-   origin: '*',
-}));
+app.use(cors());
 
 mongoose.connect(process.env.MONGO_URL);
 
