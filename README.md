@@ -12,7 +12,7 @@ Welcome to inHotel, an online hotel booking platform designed to provide a seaml
 
 ## Technologies Used
 
-- MongoDB: A NoSQL database for storing user information, hotel details, and bookings.
+- MongoDB: A MySQL database for storing user information, hotel details, and bookings.
 
 - Express: A Node.js web application framework for building the server-side part of the application.
 
